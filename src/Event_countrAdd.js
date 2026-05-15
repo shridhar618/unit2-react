@@ -1,0 +1,56 @@
+import React from "react";
+
+class CountryAdd extends React.Component {
+
+    constructor() {
+        super();
+
+        this.state = {
+            name: "",
+            region: ""
+        };
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (!this.state.name || !this.state.region) return;
+
+        this.props.addCountry({
+            name: this.state.name,  
+            region: this.state.region
+        });
+
+
+        // Clear the form
+        this.setState({
+            name: "",
+            region: ""
+        });
+    };
+
+    render() {
+        return (
+            <div>
+                <h3>Add country</h3>
+                <form onSubmit={this.handleSubmit}>
+                    <input
+                        type="text"
+                        placeholder="Country name"
+                        value={this.state.name}
+                        onChange={(e) => this.setState({ name: e.target.value })}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Region"
+                        value={this.state.region}
+                        onChange={(e) => this.setState({ region: e.target.value })}
+                    />
+                    <button type="submit">Add</button>
+                </form>
+            </div>
+        );
+    }
+}
+
+export default CountryAdd;

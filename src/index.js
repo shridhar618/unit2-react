@@ -1,0 +1,22 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+// import Greeting from './GreetingFn';  
+// import App1 from './App';
+// import CountryAdd from './Event_countrAdd';
+import App from './App.js';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+
+  // <React.StrictMode>
+  //   <Greeting name="Shridhar" />
+  // </React.StrictMode>
+);
+
+reportWebVitals();
